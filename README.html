@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="installing">Installing</h1>
+<p>To install, copy the 2 folders into <code>&lt;BlackOpsIII&gt;/share/raw</code> or <code>&lt;BlackOpsIII&gt;/mods/modname</code>.</p>
+<p>Then add the following to your <code>zone</code> file:</p>
+<pre class="hljs"><code><div>rawfile,ui/t6/lobby/lobbymenubuttons.lua
+rawfile,ui/t6/lobby/lobbymenubuttons_og.luac
+rawfile,ui/t6/lobby/lobbymenus.lua
+rawfile,ui/scobalula/frontend/menus/mutators_menu.lua
+rawfile,ui/scobalula/frontend/menus/mutators_menu_data.lua
+scriptparsetree,scripts/zm/_zm_mutators.csc
+scriptparsetree,scripts/zm/_zm_mutators.gsc
+</div></code></pre>
+<p>Next include the script in one of your gsc and csc files:</p>
+<pre class="hljs"><code><div>#using scripts\zm\_zm_mutators;
+</div></code></pre>
+<p>And you're done!</p>
+<h1 id="adding-mutators">Adding Mutators</h1>
+<h2 id="adding-to-the-ui">Adding to the UI</h2>
+<p><strong>Note: Currently each tab is limited to 14 items (15 in theory but it will go off screen), this will be fixed in the future, but keep in mind for now, I have indexed each setting to keep track</strong></p>
+<p>To add a mutator to a particular tab first open the file <code>ui/scobalula/frontend/menus/mutators_menu_data.lua</code> in a code editor such as <code>VS Code</code> or <code>Sublime</code>. If you scroll down, you will see datasource definitions for each tab, each one contains a function that returns a table of calls to <code>CoD.OptionsUtility.CreateDvarSettings</code>:</p>
+<p><img src="https://i.imgur.com/OhVaQi8.png" alt=""></p>
+<p>The parameters for this are as follows:</p>
+<pre class="hljs"><code><div>Arg 0 - Menu Ref
+Arg 1 - Title
+Arg 2 - Description
+Arg 3 - Datasource Name (for this Setting, not the name of the tab datasource)
+Arg 4 - Dvar Name
+Arg 5 - List of Settings (See Below)
+Arg 6 - Pass `nil`
+Arg 7 - Function that gets call when the setting is changed (Use SetDvarSetting)
+</div></code></pre>
+<p>For Arg 5 a table with particular properties is expected, these are the properties each item should contain:</p>
+<pre class="hljs"><code><div>option = The option string that is shown on the UI
+value - The Dvar value
+default = If this is the default value (Mostly used to show an icon if the setting is changed)
+</div></code></pre>
+<p>We can then set up a table like so:</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-comment">-- Setting 0</span>
+    {
+        option      =   <span class="hljs-string">"Cookies"</span>,
+        value       =   <span class="hljs-number">1</span>,
+        default     =   <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-comment">-- Setting 1</span>
+    {
+        option      =   <span class="hljs-string">"Cake"</span>,
+        value       =   <span class="hljs-number">2</span>,
+        default     =   <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-comment">-- Setting 2</span>
+    {
+        option      =   <span class="hljs-string">"Chocolate"</span>,
+        value       =   <span class="hljs-number">3</span>,
+        default     =   <span class="hljs-literal">false</span>
+    },
+}
+</div></code></pre>
+<p>I have set up 2 helper methods to help with this for common tasks such as building a range of values and a table of string values:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Builds a ranged setting</span>
+<span class="hljs-comment">-- Min - Minimum Value</span>
+<span class="hljs-comment">-- Max - Maximum Value</span>
+<span class="hljs-comment">-- Prefix - Prefix to show on the UI (i.e. Round 1 instead of just 1) (Optional)</span>
+<span class="hljs-comment">-- Suffix - Suffix to show on the UI (i.e. 5 Minutes instead of just 5) (Optional)</span>
+<span class="hljs-comment">-- Initial - Initial Value (i.e. "Off" ) If set, 0 is used to indicate it (Optional)</span>
+<span class="hljs-comment">-- Step - The step for each value (i.e. 5, 10, 15, 20, ....) (Optional)</span>
+<span class="hljs-comment">-- Example: BuildRangedSetting(1, 100, "Round ", "", "Off")</span>
+BuildRangedSetting(Min, Max, Prefix, Suffix, Initial, Step)
+
+<span class="hljs-comment">-- Builds a list of string settings</span>
+<span class="hljs-comment">-- Values - A list of values (i.e. {"Test", "Interesting", "Cool"}) Must be an indexed table</span>
+<span class="hljs-comment">-- Default Value - The default value in the table</span>
+<span class="hljs-comment">-- Example - BuildStringSettings({"On", "Off"}, "On")</span>
+BuildStringSettings(Values, Default)
+</div></code></pre>
+<p>Currently there are the following datasource definitions to keep in mind for each tab:</p>
+<pre class="hljs"><code><div>DataSources.MutatorSettingsGeneral
+DataSources.MutatorSettingsWeapons
+DataSources.MutatorSettingsPlayers
+DataSources.MutatorSettingsEnemies
+DataSources.MutatorSettingsFun
+</div></code></pre>
+<p>We can see from this to add a setting to a tab we need to add a call to <code>CoD.OptionsUtility.CreateDvarSettings</code> like so:</p>
+<pre class="hljs"><code><div>CoD.OptionsUtility.CreateDvarSettings(
+    arg0,
+    <span class="hljs-string">"RAPTROES"</span>,
+    <span class="hljs-string">"Enable or Disable ^3Raptroes^7 \n\nShould have never been enabled &gt;:("</span>,
+    <span class="hljs-string">"MutatorSettings_Raptroes"</span>,
+    <span class="hljs-string">"mutator_raptroes"</span>,
+    BuildStringSettings({<span class="hljs-string">"On"</span>, <span class="hljs-string">"Off"</span>}, <span class="hljs-string">"On"</span>), <span class="hljs-literal">nil</span>, SetDvarSetting),
+</div></code></pre>
+<p>This would then look like this in the Lua file:</p>
+<p><img src="https://i.imgur.com/XUAfgI7.png" alt=""></p>
+<p>We now need to ensure the setting will revert if the player reverts ALL settings, to this, scroll up until you find a series of calls to <code>Engine.SetDvar</code> like this:</p>
+<p><img src="https://i.imgur.com/ie67EEU.png" alt=""></p>
+<p>We need to add a call for our Dvar to ensure it gets reset, to this, simple add the following line, ensuring to replace the name with the dvar you choose:</p>
+<pre class="hljs"><code><div>Engine.SetDvar(<span class="hljs-string">"mutator_raptroes"</span>, 					<span class="hljs-number">0</span>)
+</div></code></pre>
+<p>This would then look this in the Lua file:</p>
+<p><img src="https://i.imgur.com/HWI3B39.png" alt=""></p>
+<p>If we boot into the game and open the Mutators menu it should should show up fine like so, and reset as expected if we hit the Options button and click reset:</p>
+<p><img src="https://i.imgur.com/XCfhS5h.png" alt=""></p>
+<h2 id="making-the-mutator-work-in-game">Making the Mutator Work In-Game</h2>
+<p>To actually make the Mutator work we'll need to add some logic to gsc and/or csc (clientscript side currently not set up) to make the Mutator work.</p>
+<p>To do this open the file <code>scriptparsetree,scripts/zm/_zm_mutators.gsc</code> and/or <code>scriptparsetree,scripts/zm/_zm_mutators.gsc</code> (clientscript side currently not set up) file and scroll down to the function <code>register_mutators</code>, we need to call <code>register_mutator</code> in this function for our Mutator, the definition for the register function is the following:</p>
+<pre class="hljs"><code><div>/@
+<span class="hljs-string">"Name: register_mutator(&lt;mutator_name&gt;, &lt;dvar_name&gt;, [pre_func], [post_func])"</span>
+<span class="hljs-string">"Summary: Registers the given mutator with the required data."</span>
+<span class="hljs-string">"MandatoryArg: &lt;mutator_name&gt; : Mutator Name"</span>
+<span class="hljs-string">"MandatoryArg: &lt;dvar_name&gt; : Mutator Dvar, must match the Mutators Lua file"</span>
+<span class="hljs-string">"OptionalArg: [pre_func] : Function called pre-load, required if the mutator requires pre-load set up such as callbacks, etc."</span>
+<span class="hljs-string">"OptionalArg: [post_func] : Function called post-load, required if the mutator requires post-load set up"</span>
+<span class="hljs-string">"Example: zm_mutators::register_mutator(MUTATOR_PERKS_NAME, MUTATOR_PERKS_DVAR, undefined, &amp;disable_perks);"</span>
+<span class="hljs-string">"SPMP: both"</span>
+@/
+<span class="hljs-function">function <span class="hljs-title">register_mutator</span><span class="hljs-params">(mutator_name, dvar_name, pre_func, post_func)</span>
+</span></div></code></pre>
+<p>For our mutator I'll register it like so:</p>
+<pre class="hljs"><code><div>register_mutator(<span class="hljs-string">"MutatorSettings_Raptroes"</span>, <span class="hljs-string">"mutator_raptroes"</span>, undefined, &amp;disable_raptroes);
+</div></code></pre>
+<p>And create a function to handle it:</p>
+<pre class="hljs"><code><div><span class="hljs-function">function <span class="hljs-keyword">private</span> <span class="hljs-title">disable_raptroes</span><span class="hljs-params">(dvar_value)</span>
+</span>{
+	<span class="hljs-keyword">if</span>(dvar_value == MUTATOR_ONOFF_OFF)
+	{
+        level.raptroes_disabled = <span class="hljs-literal">true</span>; <span class="hljs-comment">// We can now run checks elsewhere with IS_TRUE(level.raptroes_disabled)</span>
+        <span class="hljs-comment">// Do logic</span>
+	}
+}
+</div></code></pre>
+<p><strong>Note: It is recommended to create a macro for the name and dvar in the GSH like I have done for each, as this makes it easy to make edits, etc.</strong></p>
+<p>Once you have scripted the logic for your mutator, you're good to go!</p>
+<h1 id="editing-tabs">Editing Tabs</h1>
+<p>To edit the tabs first open the file <code>ui/scobalula/frontend/menus/mutators_menu_data.lua</code> and scroll down until you find the following:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">--                              Mutators Tabs</span>
+<span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+
+DataSources.MutatorsTabs = DataSourceHelpers.ListSetup(<span class="hljs-string">"MutatorsTabs"</span>,
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(arg0, arg1, arg2, arg3, arg4)</span></span>
+    <span class="hljs-keyword">return</span>
+    {
+        <span class="hljs-comment">-- Left Shoulder</span>
+        {
+            models        = { tabIcon = CoD.buttonStrings.shoulderl },
+            properties    = { m_mouseDisabled = <span class="hljs-literal">true</span> }
+        },
+        <span class="hljs-comment">-- Tab 1</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"GENERAL"</span>, 				        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsGeneral"</span>, 		dataSourceName 	= <span class="hljs-string">"MutatorSettingsGeneral"</span>,	title =	<span class="hljs-string">"GENERAL GAME SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 2</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"WEAPONS"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsWeapons"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsWeapons"</span>,	title =	<span class="hljs-string">"WEAPON SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 3</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"PLAYERS"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsPlayers"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsPlayers"</span>,	title =	<span class="hljs-string">"PLAYER SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 4</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"ENEMIES"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsEnemies"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsEnemies"</span>,	title =	<span class="hljs-string">"ENEMY SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 5</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"FUN"</span>,                            tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsFun"</span>, 	        dataSourceName 	= <span class="hljs-string">"MutatorSettingsFun"</span>,	    title =	<span class="hljs-string">"FUN SETTINGS THAT MAKES SHIT GO CRAZY"</span> }
+		},
+		<span class="hljs-comment">-- Right Shoulder</span>
+        {
+            models        = { tabIcon = CoD.buttonStrings.shoulderr },
+            properties    = { m_mouseDisabled = <span class="hljs-literal">true</span> }
+        },
+    }
+<span class="hljs-keyword">end</span>, <span class="hljs-literal">true</span>)
+</div></code></pre>
+<p>We can easily add a tab by copy and pasting and editing the data:</p>
+<pre class="hljs"><code><div>tabName - This is what shows up at the top in the tab list
+tabIcon - Icon that is shown, used mostly for controller icons
+tabId - Tab ID, best to keep it unique
+dataSourceName - Name of the datasource as we saw in adding a mutator
+title - This is what shows up at the top of the settings list
+</div></code></pre>
+<p>We first need to create a new datasource, you can copy one of the others and change its name and definitions like so:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">--                              Edwin Settings</span>
+<span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+DataSources.MutatorSettingsEdwin = DataSourceHelpers.ListSetup(<span class="hljs-string">"MutatorSettingsEdwin"</span>,
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(arg0, arg1, arg2, arg3, arg4)</span></span>
+	<span class="hljs-keyword">return</span>
+	{
+        <span class="hljs-comment">-- Setting 1</span>
+        CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			<span class="hljs-string">"EDWIN"</span>,
+			<span class="hljs-string">"^3DONKEYS AHHHHHHH^7"</span>,
+			<span class="hljs-string">"MutatorSettings_Edwin"</span>,
+			<span class="hljs-string">"mutator_edwin"</span>,
+			BuildStringSettings({<span class="hljs-string">"DONKEYS"</span>, <span class="hljs-string">"ARE"</span>, <span class="hljs-string">"BAD"</span>, <span class="hljs-string">"FOR"</span>, <span class="hljs-string">"YOU"</span>}, <span class="hljs-string">"DONKEYS"</span>), <span class="hljs-literal">nil</span>, SetDvarSetting),
+	}
+<span class="hljs-keyword">end</span>, <span class="hljs-literal">nil</span>, <span class="hljs-literal">nil</span>, Update)
+</div></code></pre>
+<p>We then need to create the tab, like so:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Tab 6</span>
+{
+    models        = { tabName 	= <span class="hljs-string">"EDWIN"</span>,                          tabIcon = <span class="hljs-string">""</span> },
+    properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsEdwin"</span>, 	        dataSourceName 	= <span class="hljs-string">"MutatorSettingsEdwin"</span>,	    title =	<span class="hljs-string">"GET AWAY FROM THE DONKEYS"</span> }
+},
+</div></code></pre>
+<p>Which would look like this:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">--                              Mutators Tabs</span>
+<span class="hljs-comment">-- /////////////////////////////////////////////////////////////////////////////////////////</span>
+
+DataSources.MutatorsTabs = DataSourceHelpers.ListSetup(<span class="hljs-string">"MutatorsTabs"</span>,
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(arg0, arg1, arg2, arg3, arg4)</span></span>
+    <span class="hljs-keyword">return</span>
+    {
+        <span class="hljs-comment">-- Left Shoulder</span>
+        {
+            models        = { tabIcon = CoD.buttonStrings.shoulderl },
+            properties    = { m_mouseDisabled = <span class="hljs-literal">true</span> }
+        },
+        <span class="hljs-comment">-- Tab 1</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"GENERAL"</span>, 				        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsGeneral"</span>, 		dataSourceName 	= <span class="hljs-string">"MutatorSettingsGeneral"</span>,	title =	<span class="hljs-string">"GENERAL GAME SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 2</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"WEAPONS"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsWeapons"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsWeapons"</span>,	title =	<span class="hljs-string">"WEAPON SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 3</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"PLAYERS"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsPlayers"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsPlayers"</span>,	title =	<span class="hljs-string">"PLAYER SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 4</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"ENEMIES"</span>,                        tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsEnemies"</span>, 	    dataSourceName 	= <span class="hljs-string">"MutatorSettingsEnemies"</span>,	title =	<span class="hljs-string">"ENEMY SETTINGS"</span> }
+        },
+        <span class="hljs-comment">-- Tab 5</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"FUN"</span>,                            tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsFun"</span>, 	        dataSourceName 	= <span class="hljs-string">"MutatorSettingsFun"</span>,	    title =	<span class="hljs-string">"FUN SETTINGS THAT MAKES SHIT GO CRAZY"</span> }
+        },
+        <span class="hljs-comment">-- Tab 6</span>
+        {
+            models        = { tabName 	= <span class="hljs-string">"EDWIN"</span>,                          tabIcon = <span class="hljs-string">""</span> },
+            properties    = { tabId 	= <span class="hljs-string">"MutatorSettingsEdwin"</span>, 	        dataSourceName 	= <span class="hljs-string">"MutatorSettingsEdwin"</span>,	    title =	<span class="hljs-string">"GET AWAY FROM THE DONKEYS"</span> }
+        },
+		<span class="hljs-comment">-- Right Shoulder</span>
+        {
+            models        = { tabIcon = CoD.buttonStrings.shoulderr },
+            properties    = { m_mouseDisabled = <span class="hljs-literal">true</span> }
+        },
+    }
+<span class="hljs-keyword">end</span>, <span class="hljs-literal">true</span>)
+</div></code></pre>
+<p>If we boot in-game our tab should be working as expected:</p>
+<p><img src="https://i.imgur.com/iGSYHmu.png" alt="Example 1"></p>
+
+</body>
+</html>
