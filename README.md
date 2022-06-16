@@ -4,7 +4,7 @@ A set of Lua/GSC scripts for adding mutators to Call of Duty: Black Ops III Mods
 
 # Disclaimer
 
-This was made just under 5 years ago for raptroes' MWZ Mod when Lua in Bo3 was in its infancy, information was non-existent (especially for frontend, and tbh, information on UI and Lua is still a horror show in Bo3), and decompilers were just getting going, and this was my first entry into trying to do something even rmeotely substantial in Lua in Bo3. With that in mind there is a lot in this set of files I would do way better, but it works and has been mostly battletested in raptroes' mod. There will not be any bug fixes, I am simply uploading this for preservation of my stuff. You can do whatever you want with it, but if you do, let us see what you come up with in my Discord server. ❤️
+This was made just under 5 years ago for raptroes' MWZ Mod when Lua in Bo3 was in its infancy, information was non-existent (especially for frontend, and tbh, information on UI and Lua is still a horror show in Bo3), and decompilers were just getting going, and this was my first entry into trying to do something even remotely substantial in Lua in Bo3. With that in mind there is a lot in this set of files I would do way better, but it works and has been mostly battletested in raptroes' mod. There will not be any bug fixes, I am simply uploading this for preservation of my stuff. You can do whatever you want with it, but if you do, let us see what you come up with in my Discord server. ❤️
 
 A lot of the mutators shown in the Lua side of things aren't implemented, as the purpose of doing this was to hand it over to raptroes' and let him do what he needed with it, so you still need to set up whatever mutators you actually want.
 
